@@ -218,15 +218,19 @@
         <div class="item has-text-centered">
           <img src="static/images/results_1.png" alt="Result 1">
           <h2 class="subtitle is-6 has-text-centered mt-2">
-            Comparison of classification accuracy (Acc, %) and parameter usage (Param, M) on task-incremental learning with large-scale and diverse datasets: ImageNet, CUBS, Stanford Cars, Flowers, Wikiart, and Sketch. 
-            H<sup>2</sup> achieves superior accuracy with significantly fewer parameters than existing methods.
+            Comparison of GrowBrain against prior methods on large-scale image classification benchmarks (ImageNet, CUBS, Stanford Cars, Flowers, Wikiart, Sketch). 
+            GrowBrain achieves strong performance with minimal parameter overhead by evolving old knowledge. 
+            The bottom figures show class-incremental accuracy trends as the number of seen classes increases. 
+            GrowBrain consistently sustains higher performance under longer task sequences.
           </h2>
         </div>
         <div class="item has-text-centered">
           <img src="static/images/results_2.png" alt="Result 2", style="max-width: 80%;"; height: auto;">
           <h2 class="subtitle is-6 has-text-centered mt-2">
-            Task-incremental and class-incremental results on Split MNIST and Split CIFAR-10. 
-            H<sup>2</sup> consistently outperforms strong baselines and approaches joint training performance without accessing previous task data.
+            We evaluate class-incremental learning performance on UCF-101 and ActivityNet by measuring the Avg and Last accuracies at steps <span style="white-space: nowrap;">T<sup>5</sup></span> and <span style="white-space: nowrap;">T<sup>10</sup></span>.  
+            GrowBrain achieves the highest accuracy across all metrics, outperforming regularization-based and parameter-isolation methods. 
+            On UCF-101, our method shows a significant gain in Last accuracy over H², WSN, PackNet, and Piggyback, while maintaining low parameter usage. 
+            On ActivityNet, where limited data per class increases reliance on prior knowledge, GrowBrain demonstrates strong generalization by effectively evolving old parameters, surpassing all baselines by large margins.
           </h2>
         </div>
         <div class="item has-text-centered">
