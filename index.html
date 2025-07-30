@@ -236,8 +236,10 @@
         <div class="item has-text-centered">
           <img src="static/images/results_3.png" alt="Result 3", style="max-width: 80%;"; height: auto;">
           <h2 class="subtitle is-6 has-text-centered mt-2">
-            Ablation study results on Split CIFAR-10 under both task- and class-incremental scenarios. 
-            The effectiveness of the model search, sensitivity-based parameter selection, and contrastive loss is validated, with additional comparisons on parameter count, FLOPs, and memory usage for binary masks.
+            We evaluate task‑incremental learning on image classification benchmarks (ImageNet + FG, CIFAR‑100) and video action recognition benchmarks (UCF‑101, ActivityNet). 
+            The table reports the average accuracy across tasks and the number of parameters used per method. 
+            GrowBrain achieves the highest accuracy on every dataset, while using the lowest or comparable number of parameters. 
+            These results illustrate its capacity to evolve prior knowledge effectively and scale across both spatial (image) and temporal (video) continual learning scenarios.
           </h2>
         </div>
       </div>
@@ -266,13 +268,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-@inproceedings{jin2022helpful,
-  title={Helpful or harmful: Inter-task association in continual learning},
-  author={Jin, Hyundong and Kim, Eunwoo},
-  booktitle={European conference on computer vision},
-  pages={519--535},
-  year={2022},
-  organization={Springer}
+@inproceedings{jin2023growing,
+  title={Growing a brain with sparsity-inducing generation for continual learning},
+  author={Jin, Hyundong and Kim, Gyeong-hyeon and Ahn, Chanho and Kim, Eunwoo},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+  pages={18961--18970},
+  year={2023}
 }
     </code></pre>
   </div>
