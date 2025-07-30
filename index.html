@@ -152,14 +152,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            When optimizing sequentially incoming tasks, deep neural networks generally suffer from catastrophic forgetting due to their lack of ability to maintain knowledge from old tasks. 
-            This may lead to a significant performance drop of the previously learned tasks. To alleviate this problem, studies on continual learning have been conducted as a countermeasure. 
-            Nevertheless, it suffers from an increase in computational cost due to the expansion of the network size or a change in knowledge that is favorably linked to previous tasks. 
-            In this work, we propose a novel approach to differentiate helpful and harmful information for old tasks using a model search to learn a current task effectively. 
-            Given a new task, the proposed method discovers an underlying association knowledge from old tasks, which can provide additional support in acquiring the new task knowledge. 
-            In addition, by introducing a sensitivity measure to the loss of the current task from the associated tasks, we find cooperative relations between tasks while alleviating harmful interference. 
-            We apply the proposed approach to both task- and class-incremental scenarios in continual learning, using a wide range of datasets from small to large scales. 
-            Experimental results show that the proposed method outperforms a large variety of continual learning approaches for the experiments while effectively alleviating catastrophic forgetting.
+            Deep neural networks suffer from catastrophic forgetting in continual learning, where they tend to lose information about previously learned tasks when optimizing a new incoming task. 
+            Recent strategies isolate the important parameters for previous tasks to retain old knowledge while learning the new task. 
+            However, using the fixed old knowledge might act as an obstacle to capturing novel representations. 
+            To overcome this limitation, we propose a framework that evolves the previously allocated parameters by absorbing the knowledge of the new task. 
+            The approach performs under two different networks. 
+            The base network learns knowledge of sequential tasks, and the sparsity-inducing hypernetwork generates parameters for each time step for evolving old knowledge. 
+            The generated parameters transform old parameters of the base network to reflect the new knowledge. 
+            We design the hypernetwork to generate sparse parameters conditional to the task-specific information and the structural information of the base network. 
+            We evaluate the proposed approach on class-incremental and taskincremental learning scenarios for image classification and video action recognition tasks. 
+            Experimental results show that the proposed method consistently outperforms a large variety of continual learning approaches for those scenarios by evolving old knowledge.
+
           </p>
         </div>
       </div>
