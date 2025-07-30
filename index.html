@@ -182,15 +182,26 @@
       <div class="content has-text-justified">
         <p>
           <strong>Motivation:</strong><br>
-          In continual learning, deep neural networks frequently encounter catastrophic forgetting when learning tasks sequentially, due to their limited capacity to preserve previously acquired knowledge.
-          While structural allocation strategies mitigate this by assigning disjoint parameter subsets per task, they often reuse prior parameters without evaluating their relevance, which may introduce negative interference and impair learning of the current task.
+          In continual learning, parameter isolation methods prevent forgetting by freezing disjoint parameter subsets for each task. 
+          However, this strategy assumes that old parameters are always reusable, which limits their adaptability to new tasks. 
+          We argue that merely reusing fixed parameters from prior tasks is insufficient, especially when tasks exhibit distributional shifts. 
+          The core question we raise is: can old knowledge be evolved rather than statically preserved to better support future learning?
         </p>
 
         <p>
           <strong>Proposed Method:</strong><br>
-          We reformulate the forgetting problem as a task interference problem and propose H<sup>2</sup> (Helpful or Harmful), a continual learning approach that selectively reuses only helpful knowledge from previous tasks.
-          Our method first conducts a model search to identify cooperative old tasks at a coarse level, and then applies a sensitivity measure using Fisher Information to isolate crucial parameters at a fine level.
-          This dual-stage strategy enables the construction of an optimal subnetwork for the current task, facilitating efficient knowledge reuse while suppressing interference.
+          We propose GrowBrain, a novel continual learning framework that evolves old knowledge through sparsity-inducing parameter generation. 
+          Our method consists of a base network and a hypernetwork. 
+          The hypernetwork receives a task token and layer embeddings and generates a transformed parameter set for each new task. 
+          By introducing a sparsity loss based on loss difference with/without each parameter, GrowBrain selectively generates only essential updates to the parameter space, avoiding redundancy. 
+          This results in an evolved, task-adaptive version of previously learned knowledge. Additionally, a reconstruction loss encourages consistency across tasks.
+        </p>
+
+        <p>
+          <strong>Experimental Results:</strong><br>
+          We evaluate GrowBrain on both image classification and video action recognition benchmarks, including ImageNet, CUBS, Stanford Cars, Flowers, Wikiart, Sketch, ActivityNet, and UCF-101. 
+          GrowBrain consistently outperforms strong continual learning baselines by achieving higher accuracy while maintaining compact parameter growth. 
+          Ablation studies confirm that sparsity-inducing generation and task-layer–conditioned parameter evolution are essential for preventing forgetting and enabling efficient adaptation.
         </p>
       </div>
 
