@@ -186,9 +186,17 @@
           In continual learning, parameter isolation methods prevent forgetting by freezing disjoint parameter subsets for each task. 
           However, this strategy assumes that old parameters are always reusable, which limits their adaptability to new tasks. 
           We argue that merely reusing fixed parameters from prior tasks is insufficient, especially when tasks exhibit distributional shifts. 
-          The core question we raise is: <p><em>can old knowledge be evolved rather than statically preserved to better support future learning?</em></p>
+          <em>The core question we raise is: in parameter isolation-based continual learning, is it possible to transform the knowledge from old tasks to fit newer tasks better?</em>
         </p>
+      </div>
 
+      <!-- ⬇️ 중간 그림 + 캡션 삽입 -->
+      <div class="has-text-centered mb-5">
+        <img src="static/images/overview.png" alt="GrowBrain method overview" style="max-width: 100%;">
+      </div>
+      <!-- ⬆️ 그림 삽입 끝 -->
+
+      <div class="content has-text-justified">
         <p>
           <strong>Proposed Method:</strong><br>
           We propose GrowBrain, a novel continual learning framework that evolves old knowledge through sparsity-inducing parameter generation. 
@@ -205,7 +213,6 @@
           Ablation studies confirm that sparsity-inducing generation and task-layer–conditioned parameter evolution are essential for preventing forgetting and enabling efficient adaptation.
         </p>
       </div>
-
       <!-- Toggle 가능한 이미지 캐러셀 부분 -->
       <div id="results-carousel" class="carousel results-carousel mt-5">
         <div class="item has-text-centered">
